@@ -1,0 +1,131 @@
+$garden: #1a9283;
+$rich: #424791;
+$gold: #daba30;
+$gold2: #dfa40a;
+$wall: #ffffff;
+$underline: #D4D4D4;
+$void: #24292e;
+
+
+.add {
+
+    padding: 14px;
+    position: relative;
+    border: 2px solid $underline;
+    box-shadow: -5px 6px 6px -1px rgba(0,0,0,0.15);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 66vw;
+   
+    
+
+    @media only screen and(max-width: 950px) {
+        width: 85vw;
+        flex-direction: column;
+        justify-content: center;
+        
+    }
+
+
+    
+      
+   
+
+
+    &__type {
+
+        
+        border: 1px solid #e7e7e7;
+        padding: 12px 15px;
+        
+        color: inherit;
+        background-color: #fff;
+        margin-right: 10px;
+        font-weight: 300;
+        transition: border 0.3s;
+        @media only screen and(max-width: 950px) {
+            margin-right: none;
+            
+            
+        }
+
+        @media only screen and(max-width: 580px) {
+    
+    
+        }
+
+        
+    }
+
+    &__description, &__value {
+
+        border: 1px solid #e7e7e7;
+        background-color: #fff;
+        color: inherit;
+        font-family: inherit;
+        font-size: 14px;
+        padding: 12px 15px;
+        margin-right: 10px;
+        border-radius: 5px;
+        transition: border 0.3s;
+        @media only screen and(max-width: 950px) {
+            margin-right: none;
+            
+            
+        }
+
+        @media only screen and(max-width: 580px) {
+    
+    
+        }
+    }
+
+    &__button {
+
+        font-size: 30px;
+        background: none;
+        border: none;
+        color: $gold;
+        cursor: pointer;
+        display: inline-block;
+        vertical-align: middle;
+        line-height: 30px;
+        margin-left: 10px;
+
+        .add__button__icon {
+            fill: $gold;
+            width: 30px;
+            height: 30px;
+
+            &:hover {
+                fill: $gold2;
+            }
+
+        }
+        
+
+        @media only screen and(max-width: 950px) {
+            margin-left: 0px;
+            margin-top: 1rem;
+            
+        }
+
+        &:active { transform: translateY(2px); }
+        &:hover {
+            color: $gold2;
+           
+        
+        }
+    }
+
+    &__type:focus,
+    &__description:focus,
+    &__value:focus {
+        outline: none;
+        border: 1px solid $garden;
+    }
+
+    &__button:focus { outline: none; }
+}

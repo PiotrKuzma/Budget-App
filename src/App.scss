@@ -26,6 +26,15 @@ body {
   
     .exp-focus:focus  {
         border: 1px solid $rich !important;
-    }       
+    }
+    
+    .Fields {
+        
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
     
 }

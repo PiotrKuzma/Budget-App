@@ -1,0 +1,121 @@
+$garden: #1a9283;
+$rich: #424791;
+$gold: #daba30;
+$gold2: #dfa40a;
+$wall: #ffffff;
+$underline: #D4D4D4;
+$void: #24292e;
+
+.item {
+    padding: 12px;
+    border-bottom: 1px solid $underline;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    
+    width: 30rem;
+    margin-bottom: 6px;
+    margin-top: 6px;
+    min-height: 4rem;
+
+    @media only screen and(max-width: 580px) {
+    width: 85vw;
+
+    }
+
+    &:hover {
+        box-shadow: -5px 6px 6px -1px rgba(0,0,0,0.15);
+    }
+
+
+    &:first-child { border-top: 1px solid $underline; }
+   
+
+    &__description {
+        min-width: 5rem;
+        max-width: 9rem;
+        margin-right: 2rem;
+        color: $void;
+        overflow: auto;
+        font-weight: 400;
+
+        @media only screen and(max-width: 950px) {
+            width: 120px; 
+            font-size: 0.9rem;
+               
+               
+        }
+    }
+
+    &__value {
+
+        transition: transform 0.3s;
+        
+        height: auto;
+        width: 120px; 
+        overflow: auto;
+        @media only screen and(max-width: 950px) {
+         
+         font-size: 0.8rem;
+            
+            
+        }
+    }
+
+    &__percentage {
+
+        margin-left: 20px;
+        transition: transform 0.3s;
+        font-size: 11px;
+        background-color: $gold;
+        padding: 3px;
+        border-radius: 3px;
+        width: 32px;
+        text-align: center;
+
+        @media only screen and(max-width: 950px) {
+           display: none;
+            
+            
+        }
+    }
+
+    
+
+    &__delete--btn {
+        font-size: 28px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        display: inline-block;
+        vertical-align: middle;
+        line-height: 28px;
+        display: none;
+
+        &__icon {
+            width: 28px;
+            height: 28px;
+            fill: $gold;
+
+            &:hover {
+                fill: $gold2;
+            }
+        }
+
+        
+
+        @media only screen and(max-width: 950px) {
+            display: block;
+            margin-left: 10px;
+            
+        }
+
+        &:focus { outline: none; }
+        &:active { transform: translateY(2px); }
+    }
+
+    &:hover .item__delete--btn { display: block; }
+    &:hover .item__value { transform: translateX(-20px); }
+    &:hover .item__percentage { transform: translateX(-20px); }
+}
