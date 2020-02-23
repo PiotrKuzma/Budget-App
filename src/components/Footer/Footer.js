@@ -8,7 +8,7 @@ const Footer = () => {
       <a
         className="footer__link"
         href="https://piotr-kuzma.netlify.com/"
-        rel="noopener"
+        rel="noopener noreferrer"
         target="_blank"
       >
         Piotr Kuźma
