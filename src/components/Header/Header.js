@@ -4,7 +4,7 @@ import { ReactComponent as Inc } from "./icons/Inc.svg";
 import { ReactComponent as Exp } from "./icons/Exp.svg";
 import { ReactComponent as Budget } from "./icons/Budget.svg";
 
-const Header = () => {
+const Header = ({ totalExp, totalInc }) => {
   const displayMonth = function() {
     const pres = new Date();
     const year = pres.getFullYear();
@@ -28,6 +28,7 @@ const Header = () => {
     return dateToday;
   };
 
+  
   return (
     <header className="display">
       <div className="budget">
@@ -45,7 +46,13 @@ const Header = () => {
             <Budget className="budget__available__container__icon" />
           </div>
 
-          <div className="budget__available--value">0</div>
+          <div className="budget__available--value">
+            {totalInc.reduce((acc, curr) => {
+              return (acc += curr.Amount);
+            }, 0) - totalExp.reduce((acc, curr) => {
+              return (acc += curr.Amount);
+            }, 0)}
+          </div>
         </div>
 
         <div className="budget__income">
@@ -53,15 +60,23 @@ const Header = () => {
             <div className="budget__income__container__text">Income</div>
             <Inc className="budget__income__container__icon" />
           </div>
-          <div className="budget__income--value">0</div>
+          <div className="budget__income--value">
+           + {totalInc.reduce((acc, curr) => {
+              return (acc += curr.Amount);
+            }, 0)}
+          </div>
         </div>
 
         <div className="budget__expenses">
           <div className="budget__expenses__container">
-          <div className="budget__expenses__container__text">Expenses</div>
-          <Exp className="budget__expenses__container__icon" />
+            <div className="budget__expenses__container__text">Expenses</div>
+            <Exp className="budget__expenses__container__icon" />
           </div>
-          <div className="budget__expenses--value">0</div>
+          <div className="budget__expenses--value">
+            - {totalExp.reduce((acc, curr) => {
+              return (acc += curr.Amount);
+            }, 0)}
+          </div>
           <div className="budget__expenses--percentage"></div>
         </div>
       </div>
