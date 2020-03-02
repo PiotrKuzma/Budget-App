@@ -28,7 +28,6 @@ const Header = ({ totalExp, totalInc }) => {
     return dateToday;
   };
 
-  
   return (
     <header className="display">
       <div className="budget">
@@ -49,9 +48,10 @@ const Header = ({ totalExp, totalInc }) => {
           <div className="budget__available--value">
             {totalInc.reduce((acc, curr) => {
               return (acc += curr.Amount);
-            }, 0) - totalExp.reduce((acc, curr) => {
-              return (acc += curr.Amount);
-            }, 0)}
+            }, 0) -
+              totalExp.reduce((acc, curr) => {
+                return (acc += curr.Amount);
+              }, 0)}
           </div>
         </div>
 
@@ -61,8 +61,9 @@ const Header = ({ totalExp, totalInc }) => {
             <Inc className="budget__income__container__icon" />
           </div>
           <div className="budget__income--value">
-           + {totalInc.reduce((acc, curr) => {
-              return (acc += curr.Amount);
+            +{" "}
+            {totalInc.reduce((acc, curr) => {
+              return (acc += parseInt(curr.Amount));
             }, 0)}
           </div>
         </div>
@@ -73,8 +74,9 @@ const Header = ({ totalExp, totalInc }) => {
             <Exp className="budget__expenses__container__icon" />
           </div>
           <div className="budget__expenses--value">
-            - {totalExp.reduce((acc, curr) => {
-              return (acc += curr.Amount);
+            -{" "}
+            {totalExp.reduce((acc, curr) => {
+              return (acc += parseInt(curr.Amount));
             }, 0)}
           </div>
           <div className="budget__expenses--percentage"></div>
