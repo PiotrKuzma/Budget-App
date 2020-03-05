@@ -6,14 +6,12 @@ import List from "./components/List/List";
 import Footer from "./components/Footer/Footer";
 import uuid from "uuid/v4";
 
-const initialIncome = [];
 
-const initialExpenses = [];
 
 function App() {
-  const [income, setIncome] = useState(initialIncome);
+  const [income, setIncome] = useState([]);
 
-  const [expenses, setExpenses] = useState(initialExpenses);
+  const [expenses, setExpenses] = useState([]);
   const [inputDesc, setInputDesc] = useState("");
   const [amount, setAmount] = useState("");
   const [option, setOption] = useState("inc");
@@ -25,7 +23,7 @@ function App() {
   };
   const handleSubmit = e => {
     e.preventDefault();
-    console.log(inputDesc, amount);
+
     if (inputDesc !== "" && amount > 0) {
       if (option === "inc") {
         const incomeItem = {
@@ -34,6 +32,8 @@ function App() {
           Amount: amount
         };
         setIncome([...income, incomeItem]);
+        setInputDesc("");
+        setAmount("");
       } else {
         const expenseItem = {
           id: uuid(),
@@ -41,6 +41,8 @@ function App() {
           Amount: amount
         };
         setExpenses([...expenses, expenseItem]);
+        setInputDesc("");
+        setAmount("");
       }
     } else {
       // Alert for correction
@@ -50,8 +52,14 @@ function App() {
     setOption(e.target.value);
   };
 
-  console.log(option);
-  console.log(income, expenses);
+  const handleDeletingInc = id => {
+    let filteredInc = income.filter(item => item.id !== id);
+    setIncome(filteredInc);
+  };
+  const handleDeletingExp = id => {
+    let filteredExp = expenses.filter(item => item.id !== id);
+    setExpenses(filteredExp);
+  };
 
   return (
     <div className="App">
@@ -65,7 +73,12 @@ function App() {
           handleSubmit={handleSubmit}
           handleSelection={handleSelection}
         />
-        <List expenses={expenses} income={income} />
+        <List
+          expenses={expenses}
+          income={income}
+          handleDeletingInc={handleDeletingInc}
+          handleDeletingExp={handleDeletingExp}
+        />
       </section>
       <Footer />
     </div>
