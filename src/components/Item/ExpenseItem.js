@@ -9,7 +9,7 @@ const ExpenseItem = ({ expense, handleDeletingExp }) => {
       <div className="item__description">{description}</div>
 
       <div className="item__value">- {Amount}</div>
-      <div className="item__percentage"></div>
+
       <div className="item__delete">
         <button
           className="item__delete--btn"
