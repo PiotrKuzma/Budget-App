@@ -1,20 +1,33 @@
 $garden: #1a9283;
-$rich: #424791;
+$rich: #f86d70;
 $gold: #daba30;
 $gold2: #dfa40a;
 $wall: #ffffff;
-$underline: #d4d4d4;
 $void: #24292e;
+$gold2: #dfa40a;
+$void: #1d2029;
+$card: #252b43;
+
+.title {
+  text-align: center;
+  width: 100%;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: $wall;
+
+  @media only screen and(max-width: 580px) {
+   font-size: 1.5rem;
+  }
+}
 
 .display {
-  min-height: 48vh;
-  background-image: url("./cash.png");
   background-repeat: no-repeat;
-  background-position: top;
+  background-position: center;
+  background-size: 25rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 12px;
+  margin-top: 50px;
 
   @media only screen and(max-width: 580px) {
     background-position: right;
@@ -25,49 +38,19 @@ $void: #24292e;
     color: #fff;
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
 
-    @media only screen and(max-width: 1235px) {
+    @media only screen and(max-width: 580px) {
       min-width: 85vw;
       flex-direction: column;
       align-items: center;
     }
 
-    @media only screen and(max-width: 580px) {
-      min-width: 85vw;
-    }
-
-    &__title {
-      font-size: 18px;
-      text-align: center;
-      margin-bottom: 10px;
-      font-weight: 600;
-      padding: 8px;
-      margin-bottom: 10px;
-      width: 250px;
-      color: $void;
-      margin-right: 40px;
-
-      .deco {
-        color: $gold;
-        font-size: 23px;
-      }
-      @media only screen and(max-width: 1235px) {
-        margin-right: 0px;
-      }
-
-      @media only screen and(max-width: 580px) {
-        min-width: 85vw;
-        font-size: 22px;
-        margin-bottom: 25px;
-        margin-top: 20px;
-      }
-    }
-
     &__available {
       padding: 5px;
-      margin-bottom: 10px;
-      background-color: $wall;
+      background-color: $card;
       text-align: center;
       min-width: 250px;
       border-radius: 5px;
@@ -75,10 +58,12 @@ $void: #24292e;
       max-width: 80vw;
       overflow: auto;
       color: $void;
-      border: 1px solid $underline;
-      margin-right: 10px;
       height: 80px;
-     
+
+     &--value {
+       color: $wall;
+       font-size: 1.5rem;
+     }
 
       &__container {
         display: flex;
@@ -87,15 +72,12 @@ $void: #24292e;
         align-items: center;
         &__text {
           font-weight: 600;
+          color: $wall;
         }
         &__icon {
           width: 30px;
           fill: $gold2;
         }
-      }
-
-      @media only screen and(max-width: 1235px) {
-        margin-right: 0px;
       }
 
       @media only screen and(max-width: 580px) {
@@ -107,8 +89,7 @@ $void: #24292e;
 
     &__income {
       padding: 5px;
-      margin-bottom: 10px;
-      background-color: $wall;
+      background-color: $card;
       text-align: center;
       min-width: 250px;
       border-radius: 5px;
@@ -116,9 +97,10 @@ $void: #24292e;
       max-width: 80vw;
       overflow: auto;
       color: $garden;
-      border: 1px solid $underline;
-      margin-right: 10px;
       height: 80px;
+      &--value {
+        color: $wall;
+      }
 
       &__container {
         display: flex;
@@ -127,6 +109,7 @@ $void: #24292e;
         align-items: center;
         &__text {
           font-weight: 600;
+          color: $wall;
         }
         &__icon {
           width: 30px;
@@ -146,16 +129,26 @@ $void: #24292e;
     }
 
     &__expenses {
-      background-color: $wall;
+      background-color: $card;
       padding: 5px;
       text-align: center;
       border-radius: 5px;
       min-width: 250px;
       box-shadow: -5px 6px 6px -1px rgba(0, 0, 0, 0.15);
-      border: 1px solid $underline;
       overflow: auto;
       color: $rich;
       height: 80px;
+      @media only screen and(max-width: 833px) {
+
+        margin-top: 15px;
+      }
+      @media only screen and(max-width: 580px) {
+
+        margin-top: 0px;
+      }
+      &--value {
+        color: $wall;
+      }
 
       &__container {
         display: flex;
@@ -164,6 +157,7 @@ $void: #24292e;
         align-items: center;
         &__text {
           font-weight: 600;
+          color: $wall;
         }
         &__icon {
           width: 30px;
@@ -171,11 +165,7 @@ $void: #24292e;
         }
       }
 
-      @media only screen and(max-width: 1235px) {
-        margin-right: 0px;
-      }
-
-      @media only screen and(max-width: 580px) {
+         @media only screen and(max-width: 580px) {
         font-size: 16px;
         width: 85vw;
       }

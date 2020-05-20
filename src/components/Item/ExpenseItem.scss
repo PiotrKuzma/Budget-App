@@ -3,34 +3,31 @@ $rich: #424791;
 $gold: #daba30;
 $gold2: #dfa40a;
 $wall: #ffffff;
-$underline: #D4D4D4;
 $void: #24292e;
+$gold2: #dfa40a;
+$void: #1d2029;
+$card: #252b43;
 
 .item {
     padding: 12px;
-    border-bottom: 1px solid $underline;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    
+    background-color: $card;
     width: 30rem;
     margin-bottom: 6px;
     margin-top: 6px;
     min-height: 4rem;
+    border-radius: 3px;
 
     @media only screen and(max-width: 580px) {
     width: 85vw;
-
     }
 
     &:hover {
-        box-shadow: -5px 6px 6px -1px rgba(0,0,0,0.15);
+        box-shadow: -2px 3px 3px -1px $gold2;
     }
-
-
-    &:first-child { border-top: 1px solid $underline; }
-   
 
     &__description {
         min-width: 5rem;
@@ -39,49 +36,25 @@ $void: #24292e;
         color: $void;
         overflow: auto;
         font-weight: 400;
+        color: $wall;
 
         @media only screen and(max-width: 950px) {
-            width: 120px; 
+            width: 120px;
             font-size: 0.9rem;
-               
-               
         }
     }
 
     &__value {
 
         transition: transform 0.3s;
-        
         height: auto;
-        width: 120px; 
+        width: 120px;
         overflow: auto;
+        color: $wall;
         @media only screen and(max-width: 950px) {
-         
          font-size: 0.8rem;
-            
-            
         }
     }
-
-    &__percentage {
-
-        margin-left: 20px;
-        transition: transform 0.3s;
-        font-size: 11px;
-        background-color: $gold;
-        padding: 3px;
-        border-radius: 3px;
-        width: 32px;
-        text-align: center;
-
-        @media only screen and(max-width: 950px) {
-           display: none;
-            
-            
-        }
-    }
-
-    
 
     &__delete--btn {
         font-size: 28px;
@@ -103,12 +76,9 @@ $void: #24292e;
             }
         }
 
-        
-
         @media only screen and(max-width: 950px) {
             display: block;
             margin-left: 10px;
-            
         }
 
         &:focus { outline: none; }

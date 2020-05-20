@@ -6,11 +6,8 @@ import List from "./components/List/List";
 import Footer from "./components/Footer/Footer";
 import uuid from "uuid/v4";
 
-
-
 function App() {
   const [income, setIncome] = useState([]);
-
   const [expenses, setExpenses] = useState([]);
   const [inputDesc, setInputDesc] = useState("");
   const [amount, setAmount] = useState("");

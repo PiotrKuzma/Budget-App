@@ -1,69 +1,59 @@
 $garden: #1a9283;
-$rich: #424791;
 $gold: #daba30;
 $gold2: #dfa40a;
 $wall: #ffffff;
-$underline: #D4D4D4;
 $void: #24292e;
+$gold2: #dfa40a;
+$void: #1d2029;
+$card: #252b43;
 
-
+.form-title {
+    text-align: center;
+    width: 100%;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: $gold;
+}
 .add {
 
     padding: 14px;
     position: relative;
-    border: 2px solid $underline;
+    background-color: $card;
     box-shadow: -5px 6px 6px -1px rgba(0,0,0,0.15);
     border-radius: 5px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     width: 66vw;
-   
-    
 
     @media only screen and(max-width: 950px) {
         width: 85vw;
         flex-direction: column;
         justify-content: center;
-        
     }
-
-
-    
-      
-   
-
 
     &__type {
 
-        
+
         border: 1px solid #e7e7e7;
         padding: 12px 15px;
-        
-        color: inherit;
-        background-color: #fff;
+        color: $wall;
+        background-color: $card;
         margin-right: 10px;
         font-weight: 300;
         transition: border 0.3s;
         @media only screen and(max-width: 950px) {
             margin-right: none;
-            
-            
         }
 
-        @media only screen and(max-width: 580px) {
-    
-    
-        }
 
-        
     }
 
     &__description, &__value {
 
         border: 1px solid #e7e7e7;
-        background-color: #fff;
-        color: inherit;
+        background-color: $card;
+        color: $wall;
         font-family: inherit;
         font-size: 14px;
         padding: 12px 15px;
@@ -72,51 +62,40 @@ $void: #24292e;
         transition: border 0.3s;
         @media only screen and(max-width: 950px) {
             margin-right: none;
-            
-            
         }
 
-        @media only screen and(max-width: 580px) {
-    
-    
-        }
     }
 
     &__button {
 
-        font-size: 30px;
         background: none;
         border: none;
         color: $gold;
         cursor: pointer;
         display: inline-block;
         vertical-align: middle;
-        line-height: 30px;
         margin-left: 10px;
 
         .add__button__icon {
             fill: $gold;
-            width: 30px;
-            height: 30px;
+            width: 35px;
+            height: 35px;
 
             &:hover {
                 fill: $gold2;
             }
 
         }
-        
+
 
         @media only screen and(max-width: 950px) {
             margin-left: 0px;
             margin-top: 1rem;
-            
         }
 
         &:active { transform: translateY(2px); }
         &:hover {
             color: $gold2;
-           
-        
         }
     }
 
@@ -124,7 +103,7 @@ $void: #24292e;
     &__description:focus,
     &__value:focus {
         outline: none;
-        border: 1px solid $garden;
+        border: 1px solid $gold2;
     }
 
     &__button:focus { outline: none; }

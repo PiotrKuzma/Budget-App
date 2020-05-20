@@ -1,12 +1,10 @@
 $garden: #1a9283;
 $rich: #424791;
 $gold: #daba30;
-$gold2: #dfa40a;
 $wall: #ffffff;
-$underline: #D4D4D4;
-$void: #24292e;
-
-
+$gold2: #dfa40a;
+$void: #1d2029;
+$card: #252b43;
 
 * {
     margin: 0;
@@ -14,27 +12,33 @@ $void: #24292e;
     box-sizing: border-box;
 }
 
-
-
 body {
-    
+
     font-family: Nunito;
     font-size: 16px;
     font-weight: 400;
-    background-color: white;
+    background-color: $void;
+    background-image: url('./data.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-position: bottom;
 
-  
-    .exp-focus:focus  {
-        border: 1px solid $rich !important;
+    @media only screen and (max-width: 950px) {
+        background-size: 30rem;
     }
-    
-    .Fields {
-        
+    .App {
+        width: 90vw;
+        margin: 0 auto;
+    }
+
+   .Fields {
+
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         width: 100%;
+
     }
-    
 }

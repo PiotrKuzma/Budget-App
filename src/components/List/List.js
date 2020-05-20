@@ -8,7 +8,6 @@ const List = ({ expenses, income, handleDeletingInc, handleDeletingExp }) => {
     <div className="container">
       <div className="income">
         <h2 className="income__title">Income</h2>
-
         <ul className="income__list">
           {income.map(income => {
             return (
@@ -21,10 +20,8 @@ const List = ({ expenses, income, handleDeletingInc, handleDeletingExp }) => {
           })}
         </ul>
       </div>
-
       <div className="expenses">
         <h2 className="expenses__title">Expenses</h2>
-
         <ul className="expenses__list">
           {expenses.map(expense => {
             return (

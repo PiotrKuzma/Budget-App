@@ -7,7 +7,6 @@ const IncomeItem = ({ income, handleDeletingInc }) => {
   return (
     <li className="item" id={id}>
       <div className="item__description">{description}</div>
-
       <div className="item__value">+ {Amount}</div>
       <div className="item__delete">
         <button
